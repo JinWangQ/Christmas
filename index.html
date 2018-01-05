@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Chritmas</title>
+	<link rel="stylesheet" href="common.css">
+	<link rel="stylesheet" href="pageA.css">
+	<link rel="stylesheet" href="pageB.css">
+	<link rel="stylesheet" href="pageC.css">
+</head>
+<body>
+<section class="container">
+	<section class="bg-adaptive page-a">
+		<figure class="moon"></figure>
+		<figure class="tree"></figure>
+		<figure class="cloudy"></figure>
+	</section>
+	<section class="bg-adaptive page-b"></section>
+	<section class="bg-adaptive page-c"></section>
+</section>
+<script type="text/javascript">
+	(function(doc,win){
+		var docEl = doc.documentElement,
+			resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+			recalc = function() {
+				var clientWidth = docEl.clientWidth;
+				if (!clientWidth) return;
+				docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+				document.body.style.height = clientWidth * (900 / 1440) +'px';
+			};
+		win.addEventListener(resizeEvt, recalc, false);
+		doc.addEventListener('DOMContentLoaded', recalc, false);
+	})(document,window)
+</script>
+</body>
+</html>
