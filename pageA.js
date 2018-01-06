@@ -1,6 +1,9 @@
 function pageA(element) {
 	this.$root = element;
 	this.$boy = element.find(".chs-boy");
+	this.$window = element.find(".window");
+	this.$leftWin = this.$window.find(".window-left");
+	this.$rightWin = this.$window.find(".window-right");
 	this.run()
 }
 
@@ -12,6 +15,24 @@ pageA.prototype.next = function(options) {
 
 pageA.prototype.stopWalk = function() {
 	this.$boy.removeClass("chs-boy-deer")
+}
+
+pageA.prototype.openWindow = function(callback) {
+	var count = 1;
+	var complete = function() {
+		++count
+		if (count===2) {
+			callback && callback();
+		}
+	}
+	var bind = function(data) {
+		data.one("transitioned webkittransitionEnd", function(event) {
+			data.removeClass("window-transition")
+			complete()
+		})
+	}
+	bind(this.$leftWin.addClass("window-transition").addClass("hover"))
+	bind(this.$rightWin.addClass("window-transition").addClass("hover"))
 }
 
 pageA.prototype.run = function(callback) {
@@ -48,5 +69,8 @@ pageA.prototype.run = function(callback) {
 	})
 	.then(function() {
 		that.stopWalk();
+		that.openWindow(function() {
+			alert("window opened")
+		})
 	}) 
 }
