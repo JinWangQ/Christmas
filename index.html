@@ -7,22 +7,15 @@
 	<link rel="stylesheet" href="pageA.css">
 	<link rel="stylesheet" href="pageB.css">
 	<link rel="stylesheet" href="pageC.css">
-	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
-    <script type="text/javascript" src="http://img.mukewang.com/down/55ac9ea30001ace700000000.js"></script>
-    <script src="christmas.js"></script>
-    <script src="pageA.js"></script>
-    <script src="pageB.js"></script>
-    <script src="pageC.js"></script>
 </head>
 <body>
-<section class="container">
+	<section class="container">
 	<section class="bg-adaptive page-a">
 		<figure class="moon"></figure>
 		<figure class="tree"></figure>
 		<figure class="cloudy"></figure>
 		<div class="chs-boy chs-boy-deer"></div>
 		<svg viewbox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
- 		<!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
 			<g>
   				<title>background</title>
   				<rect x="-1" y="-1" width="1005" height="805" id="canvas_background" fill="none"/>
@@ -43,12 +36,15 @@
 			</div>
 		</div>
 	</section>
-	<section class="bg-adaptive page-b"></section>
+	<section class="bg-adaptive page-b">
+		<figure class="christmas-boy-head"></figure>
+		<figure class="christmas-boy boy-walk"></figure>
+	</section>
 	<section class="bg-adaptive page-c"></section>
 
-</section>
-<button>点击运行雪橇动作</button>
-<script type="text/javascript">
+	</section>
+	<button>RUN</button>
+	<script type="text/javascript">
 	(function(doc,win){
 		var docEl = doc.documentElement,
 			resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
@@ -61,6 +57,13 @@
 		win.addEventListener(resizeEvt, recalc, false);
 		doc.addEventListener('DOMContentLoaded', recalc, false);
 	})(document,window)
-</script>
+	</script>
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+    <script type="text/javascript" src="http://img.mukewang.com/down/55ac9ea30001ace700000000.js"></script>
+    <script src="christmas.js"></script>
+    <script src="pageA.js"></script>
+    <script src="pageB.js"></script>
+    <script src="pageC.js"></script>
+    <script src="observer.js"></script>
 </body>
 </html>
