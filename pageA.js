@@ -1,10 +1,13 @@
-function pageA(element) {
+function pageA(element, callback) {
 	this.$root = element;
 	this.$boy = element.find(".chs-boy");
 	this.$window = element.find(".window");
 	this.$leftWin = this.$window.find(".window-left");
 	this.$rightWin = this.$window.find(".window-right");
-	this.run()
+	this.run();
+	setTimeout(function() {
+		callback();
+	}, 20000);
 }
 
 pageA.prototype.next = function(options) {
