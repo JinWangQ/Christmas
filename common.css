@@ -3,11 +3,11 @@
 	padding: 0;
 }
 /* 
-The * means all elements 
-it can make all elements zero padding and zero margin 
-thus making them look the same in all browers 
+*	The * means all elements 
+*	it can make all elements zero padding and zero margin 
+*	thus making them look the same in all browers 
 */
-/* This is a CSS reset*/
+/* 	This is a CSS reset*/
 
 
 .container {
@@ -18,5 +18,44 @@ thus making them look the same in all browers
 }
 
 .bg-adaptive {
-	background-size: 100%;
+	background-size: 100% 100%;
 }
+
+.effect-out{
+    -webkit-animation: effectOut 8s ease-in-out forwards;
+    -webkit-transform-origin:71% 72%;
+    -moz-animation: effectOut 8s ease-in-out forwards;
+    -moz-transform-origin:71% 72%;
+
+
+}
+@-webkit-keyframes effectOut{
+    0% { opacity:1; }
+    100% { -webkit-transform: scale(20); opacity:0; }
+}
+@-moz-keyframes effectOut{
+    0% { opacity:1; }
+    100% { -moz-transform: scale(20); opacity:0; }
+}
+
+.effect-in{
+    z-index: 15;
+    display: block;
+    opacity:0;
+    -webkit-transform: scale(8); 
+    -webkit-animation: effectIn 5s ease-in-out forwards;
+    -webkit-transform-origin:58.5% 73.5%;
+    -moz-transform: scale(8); 
+    -moz-animation: effectIn 5s ease-in-out forwards;
+    -moz-transform-origin:58.5% 73.5%;
+
+
+}
+@-webkit-keyframes effectIn{
+    100% { -webkit-transform: scale(1); opacity:1; }
+}
+@-moz-keyframes effectIn{
+    100% { -moz-transform: scale(1); opacity:1; }
+}
+
+
