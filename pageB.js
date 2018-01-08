@@ -1,6 +1,7 @@
 function pageB(element, callback) {
 
 	var $boy = element.find(".christmas-boy");
+	var $girl = element.find(".girl");
 	var animationEnd = "animationend webkitAnimationEnd";
 	var boyAction = {
 		walk: function() {
@@ -37,10 +38,66 @@ function pageB(element, callback) {
 		}
 	}
 
+	var girlAction = {
+		standUp: function() {
+			var dfd = $.Deferred();
+			setTimeout(function() {
+				$girl.addClass("girl-standUp");
+			}, 200)
+
+			setTimeout(function() {
+				$girl.addClass("girl-throwBook");
+				dfd.resolve();
+			}, 500)
+
+			return dfd;
+		},
+		walk: function() {
+			var dfd = $.Deferred();
+			$girl.addClass("girl-walk");
+			$girl.transition({"left":"4.5rem"}, 4000, "linear", function() {
+				dfd.resolve()
+			});
+			return dfd;
+		},
+		stopWalk: function() {
+			$girl.addClass("walk-stop")
+				.removeClass("girl-standUp")
+				.removeClass("girl-walk")
+				.removeClass("girl-throwBook")
+				.addClass("girl-stand")
+		},
+		choose: function(callback) {
+			$girl.addClass("girl-choose").removeClass("walk-stop");
+			$girl.one(animationEnd, function() {
+				callback();
+			})
+		},
+		weepWalk: function(callback) {
+			$girl.addClass("girl-weep");
+			$girl.transition({"left": "7rem"}, 1000, "linear", function() {
+				$girl.addClass("walk-stop").removeClass("girl-weep")
+				callback();
+			});
+		},
+		hug: function() {
+			$girl.addClass("girl-hug").addClass("walk-run")
+		}
+	}
+
 	boyAction.walk()
 		.then(function() {
 
 			boyAction.stopWalk();
+		})
+		.then(function() {
+			girlAction.standUp();
+		})
+		.then(function() {
+			return girlAction.walk();
+		})
+		.then(function() {
+			return girlAction.stopWalk();
 		})
 		.then(function() {
 
@@ -57,13 +114,18 @@ function pageB(element, callback) {
 			setTimeout(function() {
 				boyAction.strip(3)
 			}, 3000)
-			
+
 			setTimeout(function() {
 				boyAction.hug();
 			}, 4000)
 		})
-
-
+		.then(function() {
+			girlAction.choose(function() {
+				girlAction.weepWalk(function() {
+					girlAction.hug();
+				})
+			})
+		})
 
 
 	setTimeout(function() {
