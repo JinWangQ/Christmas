@@ -122,9 +122,9 @@ function pageB(element, callback) {
 			girlAction.weepWalk(function() {
 				girlAction.hug();
 				boyAction.hug();
-				(function() {
+				setTimeout(function() {
 					callback && callback()
-				}).defer(1000)
+				},1000)
 			})
 		})
 
@@ -199,9 +199,4 @@ function pageB(element, callback) {
         });
         return carousel;
     }
-
-
-	setTimeout(function() {
-		callback();
-	}, 18000)
 }
