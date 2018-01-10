@@ -9,6 +9,7 @@ function changePage(element, effect, callback) {
 var Christmas = function() {
 	var $pageA = $('.page-a');
 	var $pageB = $('.page-b');
+	var $pageC = $('.page-c');
 	
 	/*Test for the first scene */
 	// new pageA($pageA, function() {
@@ -24,21 +25,32 @@ var Christmas = function() {
 	// 	},20000)
 	// })
 
+	// scene A
 	var observer = new Observer();
 	new pageA($pageA, function() {
 		observer.publish("completeA");
 	});
-
+	//A->B
 	observer.subscribe("completeA", function() {
 		changePage($pageA, "effect-out", function() {
 			observer.publish("pageB");
 		})
 	})
-
+	// scene B
 	observer.subscribe("pageB", function() {
 		new pageB($pageB, function() {
 			observer.publish("completeB");
 		})
+	})
+	// B->C
+	observer.subscribe("completeB", function() {
+		changePage($pageC, "effect-out", function() {
+			observer.publish("pageC");
+		})
+	})
+
+	observer.subscribe("pageC", function() {
+		new pageC($pageC);
 	})
 
 }
