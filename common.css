@@ -38,7 +38,7 @@
     100% { -moz-transform: scale(20); opacity:0; }
 }
 
-.effect-in{
+section.effect-in{
     z-index: 15;
     display: block;
     opacity:0;

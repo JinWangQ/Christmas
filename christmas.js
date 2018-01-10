@@ -25,7 +25,7 @@ var Christmas = function() {
 	// 	},20000)
 	// })
 
-	// scene A
+	//scene A
 	var observer = new Observer();
 	new pageA($pageA, function() {
 		observer.publish("completeA");
@@ -44,14 +44,16 @@ var Christmas = function() {
 	})
 	// B->C
 	observer.subscribe("completeB", function() {
-		changePage($pageC, "effect-out", function() {
+		changePage($pageC, "effect-in", function() {
 			observer.publish("pageC");
 		})
 	})
 
 	observer.subscribe("pageC", function() {
-		new pageC($pageC);
+		new pageC();
 	})
+	// Test for the thrid scene
+	// new pageC();
 
 }
 

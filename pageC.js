@@ -16,7 +16,7 @@ function pageC() {
     }, 5000);
 
     //关门动作
-    //this.closeWindow();
+    this.closeWindow();
 }
 
 pageC.prototype.closeWindow = function() {
