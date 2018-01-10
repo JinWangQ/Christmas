@@ -6,7 +6,7 @@ function pageC() {
     this.$sceneBg  = this.$window.find(".window-scene-bg");
     this.$closeBg  = this.$window.find(".window-close-bg");
 
-    // 背景切换
+    // bg changing the shade of the couple 
     this.$sceneBg.transition({
         opacity: 0,
     }, 3000);
@@ -15,7 +15,6 @@ function pageC() {
         opacity: 1
     }, 5000);
 
-    //关门动作
     this.closeWindow();
 }
 
@@ -28,6 +27,7 @@ pageC.prototype.closeWindow = function() {
         }
     }
     var bind=function(element){
+        //close window: rotateY(0)
         element.addClass("close").one("animationend webkitAnimationEnd",function(event){
         complete()    
         })

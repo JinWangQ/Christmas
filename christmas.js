@@ -52,6 +52,7 @@ var Christmas = function() {
 	observer.subscribe("pageC", function() {
 		new pageC();
 	})
+
 	// Test for the thrid scene
 	// new pageC();
 
