@@ -15,15 +15,17 @@ function pageC() {
         opacity: 1
     }, 5000);
 
-    this.closeWindow();
+    this.closeWindow(function() {
+        Snowflake("snowflake");
+    });
 }
 
-pageC.prototype.closeWindow = function() {
+pageC.prototype.closeWindow = function(callback) {
      var count=1;
     var complete=function(){
         ++count;
         if(count==2){
-            alert("welcome")
+            callback && callback();
         }
     }
     var bind=function(element){

@@ -54,8 +54,7 @@ var Christmas = function() {
 	})
 
 	// Test for the thrid scene
-	// new pageC();
-
+	//new pageC();
 }
 
 
