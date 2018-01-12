@@ -7,3 +7,4 @@ Key Point:
 5. observer
 6. svg and canvas
 7. async programming
+8. H5 Audio
