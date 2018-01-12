@@ -57,9 +57,6 @@ var Christmas = function() {
 	//new pageC();
 }
 
-
 $(function() {
-	$("button").click(function() {
 		Christmas()
-	})
 })

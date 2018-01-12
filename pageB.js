@@ -2,6 +2,7 @@ function pageB(element, callback) {
 
 	var $boy = element.find(".christmas-boy");
 	var $girl = element.find(".girl");
+	var $cat = element.find(".cat");
 	var $carousel =element.find("#carousel")
 	var animationEnd = "animationend webkitAnimationEnd";
 
@@ -50,6 +51,7 @@ function pageB(element, callback) {
 			}, 200)
 
 			setTimeout(function() {
+				$cat.addClass("cat-book");
 				$girl.addClass("girl-throwBook");
 				dfd.resolve();
 			}, 500)
@@ -177,6 +179,7 @@ function pageB(element, callback) {
             carousel.selected(function() {
                 //girl's action reset
                 girlAction.reset();
+                carousel.reset();
                 boyAction.strip(count);
 
                 setTimeout(function() {

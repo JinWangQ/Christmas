@@ -210,8 +210,8 @@
 }
 
 .girl-choose {
-    -webkit-animation: girlChoose 2000ms steps(2, end) forwards;
-    -moz-animation: girlChoose 2000ms steps(2, end) forwards;
+    -webkit-animation: girlChoose 1000ms steps(2, end) forwards;
+    -moz-animation: girlChoose 1000ms steps(2, end) forwards;
 }
 
 @-webkit-keyframes girlChoose {
@@ -278,4 +278,20 @@
         left: 7.85rem;
         background-position: -2000% 100%;
     }
+}
+
+.cat {
+    width: 1.36rem;
+    height: 0.88rem;
+    position: absolute;
+    z-index: 3;
+    left: 3.5rem;
+    top: 5.5rem;
+    background: url(http://img.mukewang.com/565d09a80001a48801360088.png);
+    background-size: 100% 100%;
+}
+
+.cat-book {
+    background: url(http://img.mukewang.com/565d09ba0001f9aa01360089.png);
+    background-size: 100% 100%;
 }

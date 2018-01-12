@@ -6,7 +6,7 @@ function pageC() {
     this.$sceneBg  = this.$window.find(".window-scene-bg");
     this.$closeBg  = this.$window.find(".window-close-bg");
 
-    // bg changing the shade of the couple 
+    // bg changing, the shadow of the couple 
     this.$sceneBg.transition({
         opacity: 0,
     }, 3000);
