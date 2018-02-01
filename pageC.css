@@ -1,7 +1,7 @@
 .page-c {
     width  : 100%;
     height : 100%;
-    background-image: url("http://img.mukewang.com/565d0b280001788014410901.png");
+    background-image: url("https://img.mukewang.com/565d0b280001788014410901.png");
     position: absolute;
     z-index: 3;
 }
@@ -33,7 +33,7 @@
 }
 
 .window-scene-bg {
-    background: url(http://img.mukewang.com/565d0b4c0001816b02270135.png);
+    background: url(https://img.mukewang.com/565d0b4c0001816b02270135.png);
     background-size: 100% 100%;
     width: 2.26rem;
     height: 1.2rem;
@@ -47,7 +47,7 @@
 }
 
 .window-close-bg {
-    background: url(http://img.mukewang.com/565d0b3d00016a4600810081.png);
+    background: url(https://img.mukewang.com/565d0b3d00016a4600810081.png);
     background-size: 100% 100%;
     width: 0.8rem;
     height: 0.8rem;
