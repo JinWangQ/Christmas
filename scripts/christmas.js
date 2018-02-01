@@ -44,9 +44,9 @@ var Christmas = function() {
 	var container = $(".container");
 	container.css(config.layer);
 
-	var audio1 = Hmlt5Audio('scene.mov')
+	var audio1 = Hmlt5Audio('music/scene.mov')
 	audio1.end(function() {
-		Hmlt5Audio('circulation.mp3', true)
+		Hmlt5Audio('music/circulation.mp3', true)
 	})
 	new pageA($pageA, function() {
 		observer.publish("completeA");
