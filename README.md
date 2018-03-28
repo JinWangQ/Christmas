@@ -20,7 +20,7 @@ __See final Web Page at__ [here](https://jinwangq.github.io/ChristmasCard/)
 4.  3d effect
     *   open/close window
 5.  observer 
-    *   scene changing)
+    *   scene changing
 6.  svg and canvas 
     *   snow/star
 7.  async programming
