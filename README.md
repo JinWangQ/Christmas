@@ -7,14 +7,14 @@
 
 Including three scenes, full of css3 animations.
 
-__See final Web Page at__ https://jinwangq.github.io/ChristmasCard/
+__See final Web Page at__ [here](https://jinwangq.github.io/ChristmasCard/)
 
 ---
 
 ### Key Point:
 
 1.  rem-based layouts
-    *   works perfect on mobile browers as well
+    *   works perfect on mobile browsers as well
 2.  keyframs animation
 3.  transition
 4.  3d effect
